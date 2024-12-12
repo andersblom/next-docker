@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +24,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="flex justify-center p-10">
-          <Image src="/asset_store_logo_black.svg" alt="" width={152} height={21} />
+          <Link href="/">
+            <Image src="/asset_store_logo_black.svg" alt="" width={152} height={21} />
+          </Link>
         </header>
         <div>{children}</div>
       </body>
