@@ -1,8 +1,9 @@
 import { products } from '../../../lib/products'
 import Link from 'next/link'
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  const product = products.find(p => p.id === parseInt(params.id))
+export default async function ProductPage({ params }: { params: { id: string } }) {
+  const { id } = await params;
+  const product = products.find(p => p.id === parseInt(id))
 
   if (!product) {
     return <div>Product not found</div>
