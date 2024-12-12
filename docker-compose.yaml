@@ -1,0 +1,10 @@
+services:
+  app:
+    container_name: frontend_app
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
